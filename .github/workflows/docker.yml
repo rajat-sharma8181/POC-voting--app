@@ -86,7 +86,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:  
-        service: [inventory_frontend, inventory, payment]  #it will all the serivce parallerly
+        service: [result, vote, worker]  #it will all the serivce parallerly
         include:
           - service: result  
             context: ./result  #identify docker files
@@ -166,4 +166,3 @@ jobs:
         envsubst < result-deployment.yaml | kubectl apply -f -
         envsubst < vote-deployment.yaml | kubectl apply -f -
         envsubst < worker-deployment.yaml | kubectl apply -f -
-        
