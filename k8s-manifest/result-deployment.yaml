@@ -13,7 +13,7 @@ spec:
     metadata:
       labels:
         app: result
-    spec:
+    spec: 
       containers:
       - image: ${REGISTRY}/result:${IMAGE_TAG}
         name: result
@@ -29,7 +29,7 @@ metadata:
     app: result
   name: result
 spec:
-  type: LoadBalancer
+  type: LoadBalancer  #it will create external public IP automatically on the cloud provider
   ports:
   - name: "result-service"
     port: 8081
